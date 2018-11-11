@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+
+using namespace std;
+
+int stos[11];
+int top=0;
+
+void push(int number)
+{
+    if(top>=10)cout<<":("<<endl;
+    else
+    {
+        stos[top+1]=number;
+        top++;
+        cout<<":)"<<endl;
+    }
+}
+
+void pop()
+{
+    if(top<1) cout<<":("<<endl;
+    else
+    {
+        cout<<stos[top];
+        top--;
+    }
+}
+
+int main()
+{
+    char action;
+    int number;
+    string line, linen;
+
+    do
+    {
+        getline(cin,line);
+        getline(cin,linen);
+
+        number = atoi(linen.c_str());
+        action = line[0];
+
+        switch(action)
+        {
+            case '-':
+                pop();
+                break;
+            case '+':
+                push(number);
+                break;
+
+        }
+
+    }
+    while(action=='-' || action == '+');
+
+    return 0;
+}
