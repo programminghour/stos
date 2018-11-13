@@ -37,9 +37,14 @@ int main()
     do
     {
         getline(cin,line);
-        getline(cin,linen);
 
-        number = atoi(linen.c_str());
+        if(line=="+")
+        {
+            getline(cin,linen);
+            number = atoi(linen.c_str());
+        }
+
+
         action = line[0];
 
         switch(action)
