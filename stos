@@ -23,7 +23,7 @@ void pop()
     if(top<1) cout<<":("<<endl;
     else
     {
-        cout<<stos[top];
+        cout<<stos[top]<<endl;
         top--;
     }
 }
